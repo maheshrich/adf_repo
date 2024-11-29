@@ -56,6 +56,43 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "act_loop",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "act_lkp_get_object_list",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"activities": [
+						{
+							"name": "act_notebook_load_data",
+							"type": "DatabricksNotebook",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"notebookPath": "/Users/mahesh.rich10@outlook.com/adb_repo/adls_to_adb_ingestion"
+							},
+							"linkedServiceName": {
+								"referenceName": "ls_Adb",
+								"type": "LinkedServiceReference"
+							}
+						}
+					]
+				}
 			}
 		],
 		"variables": {
