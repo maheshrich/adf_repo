@@ -1,6 +1,30 @@
 {
 	"name": "pl_ingest_customer_360",
 	"properties": {
+		"activities": [
+			{
+				"name": "act_set_jobid",
+				"type": "SetVariable",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "jobid",
+					"value": {
+						"value": "@formatDateTime(utcNow(),'yyyyMMddHHmmss')",
+						"type": "Expression"
+					}
+				}
+			}
+		],
+		"variables": {
+			"jobid": {
+				"type": "String"
+			}
+		},
 		"annotations": []
 	}
 }
