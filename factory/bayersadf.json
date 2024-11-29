@@ -1,0 +1,9 @@
+{
+	"name": "bayersadf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "48d7c907-2690-4848-9323-df80e76fab80",
+		"tenantId": "0b889ca3-c111-47fc-b0ed-88a37593b8fa"
+	}
+}
